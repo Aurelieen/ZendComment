@@ -1,0 +1,33 @@
+ <?php
+ // module/Album/view/album/album/index.phtml:
+
+ $title = 'Liste des albums';
+ $this->headTitle($title);
+ ?>
+ <h1><?php echo $this->escapeHtml($title); ?></h1>
+ <span></span>
+ <p>
+     <a href="<?php echo $this->url('album', array('action'=>'add'));?>">Ajouter un nouvel album</a>
+ </p>
+
+ <table class="table">
+ <tr>
+     <th>Titre</th>
+     <th>Album</th>
+     <th>Actions</th>
+ </tr>
+ <?php foreach ($albums as $album) : ?>
+ <tr>
+     <td><?php echo $this->escapeHtml($album->title);?></td>
+     <td><?php echo $this->escapeHtml($album->artist);?></td>
+     <td>
+         <a href="<?php echo $this->url('album',
+             array('action'=>'edit', 'id' => $album->id));?>">Éditer</a>
+         <span>/</span>
+         <a href="<?php echo $this->url('album',
+             array('action'=>'delete', 'id' => $album->id));?>">Supprimer</a>
+     </td>
+ </tr>
+ <?php endforeach; ?>
+ </table>
+ <a href="<?php echo $this->url('login/process', array('action'=>'logout')); ?>">Se déconnecter</a>

@@ -1,0 +1,116 @@
+body {
+    padding-top: 60px;
+    padding-bottom: 40px;
+}
+
+.zf-green {
+    color: #68b604;
+}
+
+.btn-success {
+  background-color: #57a900;
+  background-image: -moz-linear-gradient(top, #70d900, #57a900);
+  background-image: -ms-linear-gradient(top, #70d900, #57a900);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#70d900), to(#57a900));
+  background-image: -webkit-linear-gradient(top, #70d900, #57a900);
+  background-image: -o-linear-gradient(top, #70d900, #57a900);
+  background-image: linear-gradient(top, #70d900, #57a900);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#70d900', endColorstr='#57a900', GradientType=0);
+}
+
+.btn-success:hover,
+.btn-success:active,
+.btn-success.active,
+.btn-success.disabled,
+.btn-success[disabled] {
+  background-color: #57a900;
+}
+
+.btn-success:active, .btn-success.active {
+  background-color: #57a900;
+}
+
+div.container a.brand {
+    background: url("../img/zf2-logo.png") no-repeat scroll 0 10px transparent;
+    margin-left: 0;
+    padding: 8px 20px 12px 40px;
+}
+
+/*
+    Projet ZEND FRAMEWORK 2 - 2015
+    PEPIN Aurélien, CROCHEMORE Johan. 2G1.
+
+    Les lignes ci-dessous correspondent à une modification du style
+    de la liste des albums. On surcharge certaines propriétés dans style.css
+    pour avoir un style différent.
+*/
+
+* {
+    font-family: Verdana, Arial, sans-serif;
+}
+
+.navbar-fixed-top {
+    background-image: none;
+    background-color: rgb(240, 240, 240);
+    border: none;
+}
+
+.navbar-fixed-top .container {
+    background-color: rgb(240, 240, 240);
+}
+
+.navbar-fixed-top .nv_logo {
+    display: none;
+}
+
+.navbar-inverse .navbar-nav>.active>a {
+    background-image: none;
+    background-color: rgb(120, 120, 120);
+    
+    transition: background-color 0.4s;
+}
+
+.navbar-inverse .navbar-brand {
+    color: rgb(120, 120, 120);
+    text-shadow: none;
+}
+
+.navbar-inverse .navbar-brand:hover {
+    color: rgb(120, 120, 120);
+}
+
+.navbar-inverse .navbar-nav>.active>a:hover {
+    background-color: #269abc;
+}
+
+body > .container {
+    width: 800px;
+    background-color: rgb(240, 240, 240);
+    border-radius: 3px;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12) !important;
+    margin-top: 80px;
+}
+
+body > .container h1 {
+    color: #285e8e;
+    text-align: center;
+}
+
+body > .container .table {
+    background-color: white;
+}
+
+body > .container .table th {
+    background-color: rgba(40, 94, 142, 0.2);
+}
+
+body > .container .table td, .container .table th {
+    border: 1px solid #285e8e;
+    border-collapse: collapse;
+}
+
+label > span {
+    display: block;
+    width: 80px;
+    float: left;
+}

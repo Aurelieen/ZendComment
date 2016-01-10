@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/C:/xampp/htdocs/ZF/config/application.config.php</file>
+            <file>file:/C:/xampp/htdocs/ZF/config/autoload/local.php</file>
+            <file>file:/C:/xampp/htdocs/ZF/config/autoload/global.php</file>
+            <file>file:/C:/xampp/htdocs/ZF/module/Application/view/layout/layout.phtml</file>
+            <file>file:/C:/xampp/htdocs/ZF/module/Album/src/Album/Form/AlbumForm.php</file>
+            <file>file:/C:/xampp/htdocs/ZF/module/Album/src/Album/Model/Album.php</file>
+            <file>file:/C:/xampp/htdocs/ZF/module/Album/src/Album/Controller/AlbumController.php</file>
+            <file>file:/C:/xampp/htdocs/ZF/module/Album/Module.php</file>
+            <file>file:/C:/xampp/htdocs/ZF/module/Album/view/album/album/add.phtml</file>
+            <file>file:/C:/xampp/htdocs/ZF/module/Album/view/album/album/edit.phtml</file>
+            <file>file:/C:/xampp/htdocs/ZF/module/Album/view/album/album/delete.phtml</file>
+            <file>file:/C:/xampp/htdocs/ZF/module/Application/config/module.config.php</file>
+            <file>file:/C:/xampp/htdocs/ZF/public/css/style.css</file>
+            <file>file:/C:/xampp/htdocs/ZF/public/css/bootstrap.min.css</file>
+            <file>file:/C:/xampp/htdocs/ZF/public/css/bootstrap.css</file>
+            <file>file:/C:/xampp/htdocs/ZF/module/Album/view/album/album/index.phtml</file>
+            <file>file:/C:/xampp/htdocs/ZF/composer.json</file>
+            <file>file:/C:/xampp/htdocs/ZF/module/SanAuth/Module.php</file>
+            <file>file:/C:/xampp/htdocs/ZF/module/SanAuth/config/module.config.php</file>
+            <file>file:/C:/xampp/htdocs/ZF/module/SanAuth/src/SanAuth/Controller/SuccessController.php</file>
+            <file>file:/C:/xampp/htdocs/ZF/module/SanAuth/src/SanAuth/Model/MyAuthStorage.php</file>
+            <file>file:/C:/xampp/htdocs/ZF/module/SanAuth/src/SanAuth/Model/User.php</file>
+            <file>file:/C:/xampp/htdocs/ZF/module/Application/Module.php</file>
+            <file>file:/C:/xampp/htdocs/ZF/module/SanAuth/view/san-auth/auth/login.phtml</file>
+            <file>file:/C:/xampp/htdocs/ZF/module/SanAuth/view/san-auth/success/index.phtml</file>
+            <file>file:/C:/xampp/htdocs/ZF/public/index.php</file>
+            <file>file:/C:/xampp/htdocs/ZF/init_autoloader.php</file>
+            <file>file:/C:/xampp/htdocs/ZF/vendor/autoload.php</file>
+            <file>file:/C:/xampp/htdocs/ZF/module/Application/src/Application/Controller/IndexController.php</file>
+            <file>file:/C:/xampp/htdocs/ZF/module/Album/config/module.config.php</file>
+            <file>file:/C:/xampp/htdocs/ZF/data/logs/logfile</file>
+            <file>file:/C:/xampp/htdocs/ZF/vendor/zendframework/zend-form/src/View/Helper/Form.php</file>
+            <file>file:/C:/xampp/htdocs/ZF/module/Album/src/Album/Model/AlbumTable.php</file>
+            <file>file:/C:/xampp/htdocs/ZF/.git/config</file>
+            <file>file:/C:/xampp/htdocs/ZF/vendor/zendframework/zend-form/src/Form.php</file>
+            <file>file:/C:/xampp/htdocs/ZF/.gitignore</file>
+            <file>file:/C:/xampp/htdocs/ZF/module/SanAuth/src/SanAuth/Controller/AuthController.php</file>
+            <file>file:/C:/xampp/htdocs/ZF/vendor/zendframework/zend-session/src/SessionManager.php</file>
+            <file>file:/C:/xampp/htdocs/ZF/vendor/zendframework/zend-authentication/src/AuthenticationService.php</file>
+            <file>file:/C:/xampp/htdocs/ZF/module/Album/test/phpunit.xml</file>
+            <file>file:/C:/xampp/htdocs/ZF/module/Album/test/Bootstrap.php</file>
+        </group>
+    </open-files>
+</project-private>
