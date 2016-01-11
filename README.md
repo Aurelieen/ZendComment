@@ -1,4 +1,4 @@
-# ZendComment v01
+# ZendComment
 
 ZendComment est un système de création de livres d'or dans le cadre du module « Projet Web » de seconde année en DUT Informatique.
 
@@ -13,3 +13,5 @@ Cette application permettra à l'utilisateur connecté de pouvoir effectuer plus
 - l'utilisateur pourra se diriger sur les messages écrits via un lien.
 
 BONUS : Si nous avons le temps, un tri des messages sera intégré.
+
+readme.md v01
