@@ -47,8 +47,10 @@ div.container a.brand {
 
 * {
     font-family: Verdana, Arial, sans-serif;
+    padding: 0;
 }
 
+/* Sélecteurs normaux */
 .navbar-fixed-top {
     background-image: none;
     background-color: rgb(240, 240, 240);
@@ -130,4 +132,78 @@ h3#incitation {
     font-size: 20px;
     
     padding-top: -5px;
+}
+
+// Proposition d'utilisateurs
+#propositionUsers {
+    padding-left: 0;
+    list-style-position: inside;
+    clear: both;
+}
+
+#propositionUsers li {
+    margin: 3px;
+    padding: 1px;
+    float: left;
+    width: 100px;
+    height: 40px;
+    text-align: center;
+    
+    list-style: none;
+    background: rgba(40, 94, 142, 0.2);
+    line-height: 35px;
+}
+
+#propositionUsers .ui-selecting {
+    background: #FECA40;
+}
+
+hr {
+    margin-top: 50px;
+}
+
+/* Ajouts pour l'éditeur */
+#bloc_messages {
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.unite_message {
+    margin: 10px;
+    padding: 5px;
+    background-color: white;
+    overflow: hidden;
+}
+
+.img_message {
+    width: 80px;
+    float: left;
+    margin-right: 20px;
+}
+
+.contenu_message {
+    color: #555;
+}
+
+.bouton_modif {
+    background-color: #285e8e;
+    color: #FFF;
+    padding: 4px;
+    border-radius: 2px;
+    
+    margin-right: 5px;
+}
+
+.bouton_modif:hover {
+    color: #FFF;
+}
+
+.aucun_message {
+    font-style: italic;
+    color: #555;
+}
+
+/* Sélecteurs génériques */
+.txtGras {
+    font-weight: bold;
 }

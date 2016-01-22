@@ -23,8 +23,8 @@ class LivreTable implements \Zend\ServiceManager\ServiceManagerAwareInterface {
     public function fetchMoi($id) {
         $select = new Select();
         $select->from(array('m' => 'message'))
-                ->join(array('l' => 'livre_d_or'), 'm.id_livre = l.id_livre')
-                ->join(array('u' => 'utilisateur'), 'm.id_utilisateur = u.id_utilisateur', array('posteur' => 'login_utilisateur'));
+               ->join(array('l' => 'livre_d_or'), 'm.id_livre = l.id_livre')
+               ->join(array('u' => 'utilisateur'), 'm.id_utilisateur = u.id_utilisateur', array('posteur' => 'login_utilisateur'));
         $select->where('m.id_livre = "' . $id . '"');
 
         $resultSet = $this->tableGateway->selectWith($select);
@@ -33,7 +33,8 @@ class LivreTable implements \Zend\ServiceManager\ServiceManagerAwareInterface {
 
     public function getLivre($id) {
         $id = (int) $id;
-        $rowset = $this->tableGateway->select(array('id' => $id));
+        
+        $rowset = $this->tableGateway->select(array('id_message' => $id));
         $row = $rowset->current();
         if (!$row) {
             throw new \Exception("Could not find row $id");
@@ -43,18 +44,15 @@ class LivreTable implements \Zend\ServiceManager\ServiceManagerAwareInterface {
 
     public function saveLivre(Livre $livre) {
         $data = array(
-            'id_livre' => $livre->id_livre,
-            'id_utilisateur' => $livre->id_utilisateur,
             'contenu' => $livre->contenu,
-            'date_message' => $livre->date_message,
         );
 
-        $id = (int) $livre->id;
+        $id = (int) $livre->id_message;
         if ($id == 0) {
             $this->tableGateway->insert($data);
         } else {
             if ($this->getLivre($id)) {
-                $this->tableGateway->update($data, array('id' => $id));
+                $this->tableGateway->update($data, array('id_message' => $id));
             } else {
                 throw new \Exception('Ce livre n\'existe pas');
             }
@@ -62,7 +60,7 @@ class LivreTable implements \Zend\ServiceManager\ServiceManagerAwareInterface {
     }
 
     public function deleteLivre($id) {
-        $this->tableGateway->delete(array('id' => (int) $id));
+        $this->tableGateway->delete(array('id_message' => (int) $id));
     }
 
     // Vérifie que l'utilisateur existe dans la base de données

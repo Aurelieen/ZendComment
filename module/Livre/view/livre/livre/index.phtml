@@ -1,55 +1,64 @@
 <?php
-// module/Album/view/livre/livre/index.phtml:
-if (!$user_exists) {
-    echo "Cet utilisateur n'existe pas, il n'y a pas de livre d'or à cette adresse.";
-    exit;
-}
-
-
-$title;
-if ($infos['id'] == $id_page) {
-    $title = 'Bienvenue sur votre livre d\'or !';
-} else {
-    foreach ($user as $user1) :
-        $title = 'Livre d\'or de « ' . $user1->login_utilisateur . ' »';
-    endforeach;
-}
-
-$this->headTitle($title);
-?>
-<h1><?php echo $this->escapeHtml($title); ?></h1>
-<h3 id="incitation">N'hésitez pas à laisser un message…</h3>
-
-<p id="paragAjout">
-    <a href="<?php echo $this->url('livre', array('action' => 'add')); ?>">Ajouter un message sur ce livre d'or</a>
-</p>
-
-<table class="table">
-    <tr>
-        <th>Message</th>
-        <th>Posté par</th>
-        <th>Date</th>
-    </tr>
-
-    <?php
-    if (count($livres) > 0) {
-        foreach ($livres as $livre) :
-            ?>
-            <tr>
-                <td><?php echo $this->escapeHtml($livre->contenu); ?></td>
-                <td><?php echo $this->escapeHtml($livre->posteur); ?></td>
-                <td><?php echo $this->escapeHtml($livre->date_message); ?></td>
-                <td>
-                    <a href="<?php echo $this->url('livre', array('action' => 'edit', 'id' => $livre->id_message));
-            ?>">Edit</a>
-                    <a href="<?php echo $this->url('livre', array('action' => 'delete', 'idl' => 1, 'id' => $livre->id_message));
-            ?>">Delete</a>
-                </td>
-            </tr>
-            <?php
-        endforeach;
+    // module/Album/view/livre/livre/index.phtml:
+    if (!$user_exists) {
+        echo "Cet utilisateur n'existe pas, il n'y a pas de livre d'or à cette adresse.";
+        exit;
+    }
+    
+    $title;
+    if ($infos['id'] == $id_page) {
+        $title = 'Bienvenue sur votre livre d\'or !';
     } else {
+        foreach ($user as $user1) :
+            $title = 'Livre d\'or de « ' . $user1->login_utilisateur . ' »';
+        endforeach;
+    }
+
+    $this->headTitle($title);
+    ?>
+    <h1><?php echo $this->escapeHtml($title); ?></h1>
+    <h3 id="incitation">N'hésitez pas à laisser un message…</h3>
+
+    <p id="paragAjout">
+        <a href="<?php echo $this->url('livre', array('action' => 'add', 'id' => $id_page)); ?>">Ajouter un message sur ce livre d'or</a>
+    </p>
+    
+    <!-- Bloc des messages du livre d'or -->
+    <div id="bloc_messages">
+        <?php
+        if (count($livres) > 0) {
+            foreach ($livres as $livre) :
         ?>
-        <tr><td colspan="3" id="erreurMessage">Oh oh, il semble que ce livre d'or ne contienne aucun message.</td></tr>
-<?php } ?>
-</table>
+        <div class="unite_message">
+            <img src="<?php echo $this->basePath(); ?>/img/default.png" class="img_message" />
+            Message posté par <span class="txtGras"><?php echo $this->escapeHtml($livre->posteur); ?></span> 
+            en date du <?php echo $this->escapeHtml($livre->date_message); ?> 
+            
+            <p class="contenu_message">
+                <?php echo $this->escapeHtml($livre->contenu); ?> 
+            </p>
+            <p class="boutons_message">
+                <?php
+                    if ($livre->id_livre == $infos['id'] || $livre->id_utilisateur == $infos['id']) {
+                        echo "<a class=\"bouton_modif\" href=\"" , $this->url('livre', array('action' => 'edit', 'id' => $livre->id_message)) , "\"><span>Éditer</span></a>";
+                        echo "<a class=\"bouton_modif\" href=\"" , $this->url('livre', array('action' => 'delete', 'id' => $livre->id_message)) , "\"><span>Supprimer</span></a>";
+                    }
+                ?>
+            </p>
+        </div>
+        <?php
+            endforeach;
+        } else {
+            echo "<span class=\"aucun_message\">Il n'y a aucun message dans ce livre d'or !</span>";
+        } ?>          
+    </div>
+
+    <!-- Propositions d'autres utilisateurs -->
+    <span class="interetUsers">Vous pourriez aussi vouloir visiter les livres de…</span>
+    <ol id="propositionUsers">
+    <?php
+        foreach ($others as $other) :
+            echo "<li class=\"ui-state-default\"><a href=\"" , $this->url('livre', array('action' => 'index', 'id' => $other->id_utilisateur)) , "\">" , $this->escapeHtml($other->login_utilisateur) , "</a></li>";
+        endforeach;
+    ?>
+    </ol>

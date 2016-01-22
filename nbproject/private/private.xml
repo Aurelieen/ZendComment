@@ -14,7 +14,11 @@
         <group>
             <file>file:/C:/xampp/htdocs/ZendComment/module/Livre/view/livre/livre/index.phtml</file>
             <file>file:/C:/xampp/htdocs/ZendComment/public/css/style.css</file>
-            <file>file:/C:/xampp/htdocs/ZendComment/module/Livre/src/Livre/Controller/LivreController.php</file>
+            <file>file:/C:/xampp/htdocs/ZendComment/config/application.config.php</file>
+            <file>file:/C:/xampp/htdocs/ZendComment/config/autoload/global.php</file>
+            <file>file:/C:/xampp/htdocs/ZendComment/module/Application/view/layout/layout.phtml</file>
+            <file>file:/C:/xampp/htdocs/ZendComment/module/SanAuth/src/SanAuth/Model/User.php</file>
+            <file>file:/C:/xampp/htdocs/ZendComment/module/SanAuth/view/san-auth/auth/login.phtml</file>
         </group>
     </open-files>
 </project-private>

@@ -24,6 +24,13 @@ class UserTable {
     
     public function fetchOthers($id) {
         $id = (int) $id;
+        
+        $select = new Select();
+        $select->from('utilisateur');
+        $select->where('id_utilisateur <> ' . $id);
+        
+        $resultSet = $this->tableGateway->selectWith($select);
+        return $resultSet;       
     }
 }
 
