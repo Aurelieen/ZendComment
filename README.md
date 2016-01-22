@@ -1,17 +1,24 @@
-# ZendComment
+# ZendComment | Projet Web
 
-ZendComment est un système de création de livres d'or dans le cadre du module « Projet Web » de seconde année en DUT Informatique.
+### Objectifs
+ZendComment est un système de création de livres d'or et de publication de messages dans le cadre du module « Projet Web » de seconde année en DUT Informatique. Ce projet est conjointement réalisé par Aurélien PEPIN et Johan CROCHEMORE.
 
-Ce projet est conjointement réalisé par Aurélien PÉPIN et Johan CROCHEMORE.
+### Fonctionnalités
+ZendComment permet à un utilisateur authentifié :
+- d'accéder automatiquement à son livre d'or à la connexion ;
+- d'accéder aux livres d'or des autres via un jeu de redirections au bas de la page ;
+- de poster des messages dans son livre d'or ou celui des autres ;
+- d'éditer ses messages ;
+- de supprimer ses messages ;
+- de les trier par date ;
 
-Cette application permettra à l'utilisateur connecté de pouvoir effectuer plusieurs actions :
-- il pourra créer son propre livre d'or ;
-- il pourra choisir de le supprimer ;
-- il pourra écrire un message dedans ;
-- la page d'accueil correspond à la liste de tous les livres d'or ;
-- l'utilisateur pourra se diriger sur ses livres via des liens ;
-- l'utilisateur pourra se diriger sur les messages écrits via un lien.
+### Installation
+Écrire ici le code d'installation…
 
-BONUS : Si nous avons le temps, un tri des messages sera intégré.
+### Jeu de tests
+|Pseudonyme|Mot de passe|
+|---|---|
+|aure|123|
+|johan|456|
 
-readme.md v01
+readme.md v1.2
