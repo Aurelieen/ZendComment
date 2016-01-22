@@ -13,7 +13,7 @@ class User
      * @Annotation\Type("Zend\Form\Element\Text")
      * @Annotation\Required({"required":"true" })
      * @Annotation\Filter({"name":"StripTags"})
-     * @Annotation\Options({"label":"Username:"})
+     * @Annotation\Options({"label":"Pseudonyme : "})
      */
     public $username;
      
@@ -21,7 +21,7 @@ class User
      * @Annotation\Type("Zend\Form\Element\Password")
      * @Annotation\Required({"required":"true" })
      * @Annotation\Filter({"name":"StripTags"})
-     * @Annotation\Options({"label":"Password:"})
+     * @Annotation\Options({"label":"Mot de passe : "})
      */
     public $password;
      

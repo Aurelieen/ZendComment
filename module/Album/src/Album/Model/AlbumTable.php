@@ -17,7 +17,7 @@
      public function fetchAll()
      {               
         $select = new Select();
-        $select->from(array('a' => 'album'))->join(array('u' => 'users'), 'a.id_user = u.id');
+        $select->from(array('u' => 'users'))->join(array('a' => 'album'), 'a.id_user = u.id');
         $select->where('u.user_name = "' . $this->identity . '"');
 
         $resultSet = $this->tableGateway->selectWith($select);

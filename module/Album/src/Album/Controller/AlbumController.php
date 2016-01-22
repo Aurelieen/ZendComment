@@ -42,6 +42,7 @@
                  return $this->redirect()->toRoute('album');
              }
          }
+        
          return array('form' => $form);
      }
 

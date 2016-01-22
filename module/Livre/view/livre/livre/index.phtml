@@ -1,0 +1,55 @@
+<?php
+// module/Album/view/livre/livre/index.phtml:
+if (!$user_exists) {
+    echo "Cet utilisateur n'existe pas, il n'y a pas de livre d'or à cette adresse.";
+    exit;
+}
+
+
+$title;
+if ($infos['id'] == $id_page) {
+    $title = 'Bienvenue sur votre livre d\'or !';
+} else {
+    foreach ($user as $user1) :
+        $title = 'Livre d\'or de « ' . $user1->login_utilisateur . ' »';
+    endforeach;
+}
+
+$this->headTitle($title);
+?>
+<h1><?php echo $this->escapeHtml($title); ?></h1>
+<h3 id="incitation">N'hésitez pas à laisser un message…</h3>
+
+<p id="paragAjout">
+    <a href="<?php echo $this->url('livre', array('action' => 'add')); ?>">Ajouter un message sur ce livre d'or</a>
+</p>
+
+<table class="table">
+    <tr>
+        <th>Message</th>
+        <th>Posté par</th>
+        <th>Date</th>
+    </tr>
+
+    <?php
+    if (count($livres) > 0) {
+        foreach ($livres as $livre) :
+            ?>
+            <tr>
+                <td><?php echo $this->escapeHtml($livre->contenu); ?></td>
+                <td><?php echo $this->escapeHtml($livre->posteur); ?></td>
+                <td><?php echo $this->escapeHtml($livre->date_message); ?></td>
+                <td>
+                    <a href="<?php echo $this->url('livre', array('action' => 'edit', 'id' => $livre->id_message));
+            ?>">Edit</a>
+                    <a href="<?php echo $this->url('livre', array('action' => 'delete', 'idl' => 1, 'id' => $livre->id_message));
+            ?>">Delete</a>
+                </td>
+            </tr>
+            <?php
+        endforeach;
+    } else {
+        ?>
+        <tr><td colspan="3" id="erreurMessage">Oh oh, il semble que ce livre d'or ne contienne aucun message.</td></tr>
+<?php } ?>
+</table>

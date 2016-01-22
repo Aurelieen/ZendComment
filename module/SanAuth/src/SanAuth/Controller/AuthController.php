@@ -37,7 +37,7 @@ class AuthController extends AbstractActionController {
     public function loginAction() {
         //if already login, redirect to success page 
         if ($this->getAuthService()->hasIdentity()) {
-            return $this->redirect()->toRoute('album');
+            return $this->redirect()->toRoute('livre');
         }
         $form = $this->getForm();
         return array(
@@ -52,6 +52,7 @@ class AuthController extends AbstractActionController {
         if ($request->isPost()) {
             $form->setData($request->getPost());
             if ($form->isValid()) {
+                
                 //check authentication...
                 $this->getAuthService()->getAdapter()
                         ->setIdentity($request->getPost('username'))
@@ -64,7 +65,7 @@ class AuthController extends AbstractActionController {
                 }
                 
                 if ($result->isValid()) {
-                    $redirect = 'album';
+                    $redirect = 'livre';
                     //check if it has rememberMe :
                     if ($request->getPost('rememberme') == 1) {
                         $this->getSessionStorage()
@@ -72,7 +73,10 @@ class AuthController extends AbstractActionController {
                         //set storage again 
                         $this->getAuthService()->setStorage($this->getSessionStorage());
                     }
-                    $this->getAuthService()->getStorage()->write($request->getPost('username'));
+                    
+                    $result = $this->getAuthService()->getAdapter()->getResultRowObject();
+                    $this->getAuthService()->getStorage()->write(array('login' => $request->getPost('username'),
+                                                                       'id' => $result->id_utilisateur));
                 }
             }
         }
@@ -81,7 +85,7 @@ class AuthController extends AbstractActionController {
     public function logoutAction() {
         $this->getSessionStorage()->forgetMe();
         $this->getAuthService()->clearIdentity();
-        $this->flashmessenger()->addMessage("You've been logged out");
+        $this->flashmessenger()->addMessage("Vous avez été déconnecté.");
         return $this->redirect()->toRoute('login');
     }
 }
