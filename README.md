@@ -30,3 +30,8 @@ Dans le projet cloné, cliquez depuis la racine sur *config*, puis sur *autoload
 
 ### Commentaires
 Le modèle conceptuel de données fournit en cours reste le même, à ceci près qu'un utilisateur ne peut plus créer autant de livres d'or qu'il le souhaite mais qu'il en possède un par défaut, à l'intérieur duquel lui et les autres peuvent écrire.
+
+Nous avons conservé le module « Album » dans l'arborescence mais il n'est plus utilisé et fonctionnel.
+Bonne lecture :-)
+
+![screen](https://raw.githubusercontent.com/Aurelieen/ZendComment/master/msg_livreor.PNG)
