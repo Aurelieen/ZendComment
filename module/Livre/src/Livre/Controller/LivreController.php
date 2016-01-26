@@ -49,10 +49,10 @@ class LivreController extends AbstractActionController {
                     $message->date_message = new \Zend\Db\Sql\Expression("NOW()");
                     $message->id_livre = $id;
                     $message->id_utilisateur = $perso['id'];
-
-                    print_r($message);
+                    $message->id_message = 0;
+                    
                     $this->getLivreTable()->saveLivre($message);
-
+                    
                      // Redirect to list of albums
                     return $this->redirect()->toRoute('livre');
                 }

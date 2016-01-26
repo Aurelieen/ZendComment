@@ -44,10 +44,14 @@ class LivreTable implements \Zend\ServiceManager\ServiceManagerAwareInterface {
 
     public function saveLivre(Livre $livre) {
         $data = array(
+            'id_livre' => $livre->id_livre,
+            'id_utilisateur' => $livre->id_utilisateur,
             'contenu' => $livre->contenu,
+            'date_message' => $livre->date_message,
         );
-
+        
         $id = (int) $livre->id_message;
+        
         if ($id == 0) {
             $this->tableGateway->insert($data);
         } else {
